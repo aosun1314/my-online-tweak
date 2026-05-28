@@ -3,6 +3,6 @@ Name: 云端注入管理器 v11.0
 Depends: ellekit, preferenceloader
 Version: 11.0
 Architecture: iphoneos-arm
-Description: 11.0完全体：基于AppList纯文本桥接，一键勾选任意App注入核心诊断台。
+Description: 11.0完全体：基于AltList桥接渲染，支持iOS 15/16一键勾选应用注入。
 Maintainer: aosun1314
 Author: aosun1314
