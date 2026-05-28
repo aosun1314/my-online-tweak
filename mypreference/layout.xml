@@ -13,7 +13,6 @@
 		<dict>
 			<key>cell</key>
 			<string>PSLinkCell</string>
-			<!-- 💡 核心修正：这里也必须是 AltList -->
 			<key>bundle</key>
 			<string>AltList</string>
 			<key>isController</key>
