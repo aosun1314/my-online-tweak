@@ -1,26 +1,25 @@
 name: Build Tweak
 
 on:
-  workflow_dispatch: # 允许你在网页上手动点按钮开始打包
+  workflow_dispatch:
 
 jobs:
   build:
-    runs-on: macos-latest # 借用苹果官方的最强虚拟机
+    runs-on: macos-latest
 
     steps:
     - name: Checkout project
       uses: actions/checkout@v4
 
     - name: Setup Theos environment
-      uses: Randomblock1/theos-action@v1 # 调用官方市场的 Theos 部署架
+      uses: Randomblock1/theos-action@v1
 
     - name: Compile and Package
       run: |
         make package
         
     - name: Upload 成品 DEB 大包
-      uses: actions/artifacts-upload@v1
+      uses: actions/upload-artifact@v4
       with:
         name: my-completed-deb
-        path-glob-pattern: packages/*.deb
-，
+        path: packages/*.deb
