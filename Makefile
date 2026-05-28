@@ -1,21 +1,14 @@
-TARGET := iphone:clang:latest:15.0
-ARCHS := arm64 arm64e
-
 include $(THEOS)/makefiles/common.mk
 
-TWEAK_NAME = MyDebugTool
-MyDebugTool_FILES = Tweak.x
-MyDebugTool_CFLAGS = -fobjc-arc
-MyDebugTool_FRAMEWORKS = UIKit Security AudioToolbox
+BUNDLE_NAME = MyDebugToolPrefs
 
-before-install::
-	-(RM) $(THEOS_OBJ_DIR)/MyDebugTool.dylib
+# ✅ 修正：偏好设置插件不需要编译 layout.xml，如果还有其他 .m 文件再写在这里，没有就留空或写空
+MyDebugToolPrefs_FILES = 
+# ✅ 核心：把 layout.xml 当作资源文件打包进 Bundle 中
+MyDebugToolPrefs_RESOURCES = layout.xml
 
-include $(THEOS)/makefiles/tweak.mk
+MyDebugToolPrefs_INSTALL_PATH = /Library/PreferenceBundles
+MyDebugToolPrefs_FRAMEWORKS = UIKit
+MyDebugToolPrefs_PRIVATE_FRAMEWORKS = Preferences
 
-# 2026 修正：移除手机端绝对路径的 install_name_tool，转由标准签名链处理
-after-install::
-	$(STRIP) $(THEOS_OBJ_DIR)/MyDebugTool.dylib
-
-SUBPROJECTS += mypreference
-include $(THEOS)/makefiles/aggregate.mk
+include $(THEOS)/makefiles/bundle.mk
