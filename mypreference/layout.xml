@@ -1,0 +1,5 @@
+<view title="云端注入管理器 v11.0">
+    <section footer="开启下方开关后，对应的 App 启动时会自动加载核心测试面板。">
+        <bundle-list title="勾选注入目标应用" key="enabled-AppList" selector="enabled-" />
+    </section>
+</view>
