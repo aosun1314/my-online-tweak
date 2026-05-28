@@ -22,4 +22,5 @@ jobs:
       uses: actions/artifacts-upload@v1
       with:
         name: my-completed-deb
-        path: packages/*.deb
+        path-glob-pattern: packages/*.deb
+，
