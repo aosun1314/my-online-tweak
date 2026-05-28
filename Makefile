@@ -8,19 +8,14 @@ MyDebugTool_FILES = Tweak.x
 MyDebugTool_CFLAGS = -fobjc-arc
 MyDebugTool_FRAMEWORKS = UIKit Security AudioToolbox
 
-# 安装前清理缓存
 before-install::
 	-(RM) $(THEOS_OBJ_DIR)/MyDebugTool.dylib
 
 include $(THEOS)/makefiles/tweak.mk
 
-# 剥离指纹并修正动态库路径
+# 2026 修正：移除手机端绝对路径的 install_name_tool，转由标准签名链处理
 after-install::
 	$(STRIP) $(THEOS_OBJ_DIR)/MyDebugTool.dylib
-	install_name_tool -id /var/jb/Library/MobileSubstrate/DynamicLibraries/com.apple.CoreLayoutCache.dylib $(THEOS_OBJ_DIR)/MyDebugTool.dylib
 
-# ==========================================
-# 指定编译设置面板子项目
-# ==========================================
 SUBPROJECTS += mypreference
 include $(THEOS)/makefiles/aggregate.mk
