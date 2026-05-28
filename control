@@ -1,0 +1,8 @@
+Package: com.yourname.universalhijack
+Name: 云端注入管理器 v11.0
+Depends: mobilesubstrate, preferenceloader, applist
+Version: 11.0
+Architecture: iphoneos-arm
+Description: 11.0完全体：自带设置面板，支持一键勾选任意App注入核心诊断台。
+Maintainer: aosun1314
+Author: aosun1314
