@@ -20,7 +20,7 @@
 			<key>label</key>
 			<string>勾选注入目标应用</string>
 			<key>ALSettingsPath</key>
-			<string>/var/mobile/Library/Preferences/com.yourname.universalhijack.plist</string>
+			<string>/var/jb/var/mobile/Library/Preferences/com.yourname.universalhijack.plist</string>
 			<key>ALSettingsKeyPrefix</key>
 			<string>enabled-</string>
 			<key>ALChangeNotification</key>
