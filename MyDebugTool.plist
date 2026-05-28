@@ -6,7 +6,7 @@
 	<dict>
 		<key>Bundles</key>
 		<array>
-			<string>Com.Windmillaccelerator.vpn</string>
+			<string>com.apple.UIKit</string>
 		</array>
 	</dict>
 </dict>
